@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('inside onSubmit');
     this._apiService.setName(this.user.login_name);
     this.router.navigate(['dashboard']);
     this.user = {

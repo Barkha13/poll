@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.login_name = this._apiService.getName();
     this._apiService.allPolls((data)=>{
-      console.log(data);
       this.polls = data;
     });
     

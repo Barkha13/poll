@@ -4,12 +4,10 @@ var path = require("path");
 module.exports = function(app){
 
     app.post('/add_poll', function(req,res){
-        console.log('inside add poll routes...');
         polls.addPoll(req,res);
     });
     
     app.get('/all', function(req,res){
-        console.log('display all the polls');
         polls.show(req,res);
     });
 
@@ -18,7 +16,6 @@ module.exports = function(app){
     })
 
     app.get('/vote/:p_id/:option',function(req,res){
-        console.log('inside vote route routes...',req.params.vote1)
         polls.addVote(req,res);
     })
 

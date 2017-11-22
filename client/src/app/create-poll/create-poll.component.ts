@@ -25,7 +25,6 @@ export class CreatePollComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this._question.quest,'--------',this._question.opt1,this._question.opt2,this._question.opt3,this._question.opt4);
     this._apiService.addPoll(this._question.quest,this._question.opt1,this._question.opt2,this._question.opt3,this._question.opt4);
     
     this.router.navigate(['dashboard']);

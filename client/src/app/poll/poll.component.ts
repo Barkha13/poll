@@ -19,12 +19,10 @@ export class PollComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.id = params['id'];
-      console.log(this.id);
     });
 
     this.poll = this._apiService.showPoll(this.id,(data)=>{
       this.poll = data;
-      console.log('json poll-----',this.polls);
     })
   }
 

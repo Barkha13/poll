@@ -4,7 +4,6 @@ var Poll = mongoose.model('Poll');
 module.exports = {
 
     show: function(req,res){
-        console.log('in cont...')
         Poll.find({}, function(err, polls){
             console.log(polls);
             res.json(polls);
@@ -12,7 +11,6 @@ module.exports = {
     },
 
     addPoll : function(req,res){
-        console.log('name is--',req.body.name, req.body.question, req.body.option1,req.body.option2,req.body.option3,req.body.option4);
         var poll = new Poll({
             name : req.body.name,
             question : req.body.question,
