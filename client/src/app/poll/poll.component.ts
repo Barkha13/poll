@@ -32,4 +32,5 @@ export class PollComponent implements OnInit {
     this._apiService.vote(p_id,option);
     this.ngOnInit();
   }
+
 }

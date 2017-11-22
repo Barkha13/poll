@@ -66,5 +66,17 @@ module.exports = {
                 }
             })
         })
+    },
+
+    deletePoll : function(req,res){
+        Poll.findOneAndRemove({_id : req.params.d_id},function(err){
+            if(err){
+                console.log("something went wrong...");
+            }
+            else{
+                console.log('deleted poll in db...');
+            }
+        })
     }
+
 }

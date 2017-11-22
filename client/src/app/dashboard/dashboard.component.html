@@ -41,7 +41,7 @@
         {{poll.createdAt | date: 'medium'}}
       </td>
       <td>
-        <a *ngIf="login_name == poll.name" [routerLink]="['/delete,poll._id']">Delete</a>
+        <a *ngIf="login_name == poll.name" [routerLink]="['/delete,poll._id']" (click)="onDelete(poll._id)">Delete</a>
       </td>
     </tr>
   </table>

@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: "dashboard", pathMatch: 'full', component: DashboardComponent},
   {path: "new_poll", pathMatch: 'full', component: CreatePollComponent},
   {path: "poll/:id", pathMatch: 'full', component:PollComponent},
+  {path: "delete/:d_id", pathMatch: 'full', component: DashboardComponent},
 ];
 
 @NgModule({

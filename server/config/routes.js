@@ -21,4 +21,8 @@ module.exports = function(app){
         console.log('inside vote route routes...',req.params.vote1)
         polls.addVote(req,res);
     })
+
+    app.get('/delete/:d_id',function(req,res){
+        polls.deletePoll(req,res);
+    })
 }

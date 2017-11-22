@@ -68,5 +68,17 @@ export class ApiService {
       }
     )
   }
+
+  delete(d_id){
+    this._http.get(`/delete/${d_id}`)
+    .subscribe(
+      (response) => {
+        console.log('deleted poll...');
+      },
+      (err) => {
+        console.log('Error in deleting poll...');
+      }
+    )
   }
+  
 }

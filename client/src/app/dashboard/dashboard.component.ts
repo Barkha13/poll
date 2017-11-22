@@ -24,4 +24,10 @@ export class DashboardComponent implements OnInit {
     
   }
 
+
+  onDelete(d_id){
+    this._apiService.delete(d_id);
+    this.ngOnInit();
+  }
+
 }
