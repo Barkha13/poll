@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreatePollComponent } from './create-poll/create-poll.component';
+import { PollComponent } from './poll/poll.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CreatePollComponent } from './create-poll/create-poll.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CreatePollComponent
+    CreatePollComponent,
+    PollComponent
   ],
   imports: [
     BrowserModule,

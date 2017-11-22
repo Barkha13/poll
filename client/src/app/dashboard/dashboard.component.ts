@@ -11,11 +11,17 @@ import { ApiService} from './../api.service';
 export class DashboardComponent implements OnInit {
 
   login_name;
+  polls = [];
 
   constructor(private _apiService : ApiService, private router: Router) { }
 
   ngOnInit() {
     this.login_name = this._apiService.getName();
+    this._apiService.allPolls((data)=>{
+      console.log(data);
+      this.polls = data;
+    });
+    
   }
 
 }

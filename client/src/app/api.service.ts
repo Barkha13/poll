@@ -18,9 +18,9 @@ export class ApiService {
     return this.name;
   }
 
-  addPoll(que){
+  addPoll(que,opt1,opt2,opt3,opt4){
     console.log('inside services addPoll...',que);
-    this._http.post('/add_poll',{name: this.name, question: que})
+    this._http.post('/add_poll',{name: this.name, question: que, option1: opt1, option2: opt2, option3: opt3, option4: opt4})
     .subscribe(
       (response) => {
         console.log('added poll...');
@@ -31,15 +31,42 @@ export class ApiService {
     )
   }
 
-  // addOptions(opt1,opt2,opt3,opt4){
-  //   this._http.post('/add_options',{option1:opt1,option2:opt2,option3:opt3,option4:opt4})
-  //   .subscribe(
-  //     (response) => {
-  //       console.log('added options...');
-  //     },
-  //     (err) => {
-  //       console.log('Error in adding...');
-  //     }
-  //   )
-  // }
+  allPolls(callback){
+    console.log('inside all polls');
+    return this._http.get('/all')
+    .subscribe(
+      (response) => {
+        callback(response.json());
+      },
+      (err) => {
+        console.log('Error in display...',err);
+      }
+    )
+  }
+
+  showPoll(id,callback){
+    return this._http.get(`/show_poll/${id}`)
+    .subscribe(
+      (response) => {
+        callback(response.json());
+      },
+      (err) => {
+        console.log('error is..',err);
+      }
+    )
+  }
+
+  vote(p_id,option){
+    console.log('inside poll');
+    return this._http.get(`/vote/${p_id}/${option}`)
+    .subscribe(
+      (response) => {
+        console.log('added vote...');
+      },
+      (err) => {
+        console.log('Error in adding vote...');
+      }
+    )
+  }
+  }
 }
