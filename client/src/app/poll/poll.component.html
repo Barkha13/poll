@@ -7,11 +7,12 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
   <h2>{{poll.question}}</h2>
   <p>Click the vote Button to choose one.</p>
-  <a [routerLink]="['/dashboard']" style="margin-left:1200px;">Go to Polls</a>
+  <a [routerLink]="['/dashboard']" style="margin-left:1000px;">Go to Polls</a>
   <br><br>
-  <table>
+  <table class="table table-bordered">
     <tr>
       <td>
         Option
@@ -69,5 +70,7 @@
     </tr>
     
   </table>
+  </div>
 </body>
+
 </html>

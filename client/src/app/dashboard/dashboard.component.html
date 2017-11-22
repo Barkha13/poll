@@ -7,15 +7,18 @@
   <title>Document</title>
 </head>
 <body>
+    <div class="container">
   <h1>Welcome {{login_name}}</h1>
-  <a [routerLink]="['/new_poll']" style="margin-left: 1200px;">Create a New Poll</a>
-  <a href="/" style="margin-left: 50px;">Logout</a>
+  <a [routerLink]="['/new_poll']" style="margin-left: 800px;">Create a New Poll</a>
+  <a href="/" style="margin-left: 20px;">Logout</a>
 
   <h2>Current Polls:</h2>
-  <br><br><br>
-  <table style="border : 1px solid black;">
-    <tr style="border: 1px solid black;margin-left: 50px;">
-      <td style="margin-left: 50px;">
+  <br><br>
+  <input type="text" name="search" value="Serach">
+  <br><br>
+  <table class="table table-bordered">
+    <tr>
+      <td>
         Name
       </td>
       <td>
@@ -28,7 +31,7 @@
         Action
       </td>
     </tr>
-    <tr *ngFor="let poll of polls" style="border:1px solid black;">
+    <tr *ngFor="let poll of polls">
       <td>
         {{poll.name}}
       </td>
@@ -38,13 +41,14 @@
         </a>
       </td>
       <td>
-        {{poll.createdAt | date: 'medium'}}
+        {{poll.createdAt | date: 'longDate'}}
       </td>
       <td>
         <a *ngIf="login_name == poll.name" [routerLink]="['/delete,poll._id']" (click)="onDelete(poll._id)">Delete</a>
       </td>
     </tr>
   </table>
+  </div>
 </body>
 
 </html>
