@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome {{login_name}}</h1>
+  <a [routerLink]="['/new_poll']" style="margin-left: 1200px;">Create a New Poll</a>
+  <a href="/" style="margin-left: 50px;">Logout</a>
+
+  <h2>Current Polls:</h2>
+  <br><br><br>
+  <table style="border : 1px solid black;">
+    <tr style="border: 1px solid black;margin-left: 50px;">
+      <td style="margin-left: 50px;">
+        Name
+      </td>
+      <td>
+        Survey Question
+      </td>
+      <td>
+        Date Posted
+      </td>
+      <td>
+        Action
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

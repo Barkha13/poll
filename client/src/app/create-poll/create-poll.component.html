@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Put the question and options here:</h1>
+  <a [routerLink]="['/dashboard']" style="margin-left:1200px;">Cancel</a>
+  <br><br><br>
+  <form #addForm = "ngForm" style="text-align:right; width: 500px;" (ngSubmit)="onSubmit()" method="post">
+    Question: <input
+    type="text"
+    name="question"
+    required
+    minlength="8"
+    [(ngModel)] = '_question.quest'
+    #question = 'ngModel'
+    >
+    <span style="color:red" *ngIf="!question.valid">Question is required!!(At least 8 Characters)</span><br><br>
+  
+    Option 1: <input
+    type="text"
+    name="option1"
+    required
+    minlength="3"
+    [(ngModel)] = '_question.opt1'
+    #option1 = 'ngModel'
+    >
+    <span style="color:red" *ngIf="!option1.valid">Option 1 is required!!(At least 3 Characters)</span><br><br>
+  
+    Option 2: <input
+    type="text"
+    name="option2"
+    required
+    minlength="3"
+    [(ngModel)] = '_question.opt2'
+    #option2 = 'ngModel'
+    >
+    <span style="color:red" *ngIf="!option2.valid">Option 2 is required!!(At least 3 Characters)</span><br><br>
+  
+  
+    Option 3: <input
+    type="text"
+    name="option3"
+    required
+    minlength="3"
+    [(ngModel)] = '_question.opt3'
+    #option3 = 'ngModel'
+    >
+    <span style="color:red" *ngIf="!option3.valid">Option 3 is required!!(At least 3 Characters)</span><br><br>
+  
+    Option 4: <input
+    type="text"
+    name="option4"
+    required
+    minlength="3"
+    [(ngModel)] = '_question.opt4'
+    #option4 = 'ngModel'
+    >
+    <span style="color:red" *ngIf="!option4.valid">Option 4 is required!!(At least 3 Characters)</span><br><br>
+
+    <button type="submit" name="submit" [disabled]="!addForm.valid">Create Poll</button>
+  </form>
+</body>
+</html>
